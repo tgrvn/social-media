@@ -1,0 +1,7 @@
+.env
+docker/db
+.idea
+vendor
+storage/logs
+storage/db
+docker/config/nginx/logs

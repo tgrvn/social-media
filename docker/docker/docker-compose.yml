@@ -1,0 +1,42 @@
+version: '3'
+services:
+    nginx:
+        image: nginx:latest
+        ports:
+            - "127.0.0.1:81:80"
+        volumes:
+            - ./:${APP_PATH}
+            - ./docker/config/nginx/logs:/var/log/nginx
+            - ./docker/config/nginx/hosts:/etc/nginx/templates/
+        environment:
+            WWW_ROOT: ${APP_PATH}/${WWW_FOLDER}
+        links:
+            - php
+    db:
+        image: mysql:8.0
+        hostname: db
+        volumes:
+            - "${DOCKER_DB_FILES}:/var/lib/mysql"
+            - ./docker/default-db-dumps:/docker-entrypoint-initdb.d
+            - /var/run/mysqld
+        environment:
+            MYSQL_ROOT_PASSWORD: "${DOCKER_DB_ROOT_PWD}"
+            MYSQL_USER: "${DB_USERNAME}"
+            MYSQL_PASSWORD: "${DB_PASSWORD}"
+            MYSQL_DATABASE: "${DB_DATABASE}"
+            TZ: "Europe/Kiev"
+        ports:
+            - "${DOCKER_DB_PUBLIC}:3306"
+    php:
+        build:
+            context: ./
+            dockerfile: ./docker/config/php/Dockerfile
+            args:
+                APP_PATH: ${APP_PATH}
+        volumes:
+            - ./:${APP_PATH}
+        hostname: php
+        environment:
+            TZ: Europe/Kiev
+            APP_PATH: ${APP_PATH}
+            PHP_IDE_CONFIG: "serverName=Docker"
