@@ -7,23 +7,34 @@
                 <div class="container">
                     <x-auth.form heading="Sign Up" description="Enter your email and password to register"
                                  action="/sign" method="post">
-
-                        <label>Name</label>
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Name"
-                                   aria-label="Name">
+                            <x-form.input type="text" name="name">
+                                Name
+                            </x-form.input>
                         </div>
 
-                        <label>Email</label>
                         <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Email"
-                                   aria-label="Email">
+                            <x-form.input type="text" name="last">
+                                Last name
+                            </x-form.input>
                         </div>
 
-                        <label>Password</label>
                         <div class="mb-3">
-                            <input type="password" class="form-control" placeholder="Password"
-                                   aria-label="Password">
+                            <x-form.input type="email" name="email">
+                                Email
+                            </x-form.input>
+                        </div>
+
+                        <div class="mb-3">
+                            <x-form.input type="password" name="password">
+                                Password
+                            </x-form.input>
+                        </div>
+
+                        <div class="mb-3">
+                            <x-form.input type="password" name="password_confirmation">
+                                Password confirm
+                            </x-form.input>
                         </div>
 
                         <div class="form-check form-check-info text-left">
@@ -35,6 +46,7 @@
                                     Conditions</a>
                             </label>
                         </div>
+
                         <div class="text-center">
                             <button type="button" class="btn bg-gradient-primary w-100 mt-4 mb-0">Sign
                                 up
