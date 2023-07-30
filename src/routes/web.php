@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,11 +18,19 @@ Route::get('/', function () {
 });
 
 Route::get('/signin', function () {
-    return view('signin.index');
+    return view('auth.signin');
 });
 
 Route::get('/signup', function () {
-    return view('signup.index');
+    return view('auth.signup');
+});
+
+Route::get('/send-reset-code', function () {
+    return view('auth.send-reset-code');
+});
+
+Route::get('/password-reset', function () {
+    return view('auth.password-reset');
 });
 
 require __DIR__.'/auth.php';

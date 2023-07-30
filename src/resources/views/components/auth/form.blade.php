@@ -13,7 +13,9 @@
                 </form>
             </div>
 
-            {{$footer}}
+            @if(isset($footer))
+                {{$footer}}
+            @endif
         </div>
     </div>
 </div>

@@ -18,9 +18,9 @@
                             </x-form.input>
                         </div>
 
-                        <x-form.checkbox>
+                        <x-form.switch>
                             Remember me
-                        </x-form.checkbox>
+                        </x-form.switch>
 
                         <div class="text-center">
                             <button type="button"
@@ -33,6 +33,8 @@
                             <x-auth.link href="/signup" link-text="Sign Up">
                                 Don't have an account?
                             </x-auth.link>
+
+                            <x-auth.link href="/send-reset-code" link-text="Reset Password"/>
                         @endslot
                     </x-auth.form>
 

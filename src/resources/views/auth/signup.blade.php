@@ -37,15 +37,11 @@
                             </x-form.input>
                         </div>
 
-                        <div class="form-check form-check-info text-left">
-                            <input class="form-check-input" type="checkbox" value=""
-                                   id="flexCheckDefault" checked>
-                            <label class="form-check-label" for="flexCheckDefault">
-                                I agree the <a href="#"
-                                               class="text-dark font-weight-bolder">Terms and
-                                    Conditions</a>
-                            </label>
-                        </div>
+                        <x-form.checkbox name="agree">
+                            I agree the <a href="#"
+                                           class="text-dark font-weight-bolder">Terms and
+                                Conditions</a>
+                        </x-form.checkbox>
 
                         <div class="text-center">
                             <button type="button" class="btn bg-gradient-primary w-100 mt-4 mb-0">Sign
@@ -54,13 +50,9 @@
                         </div>
 
                         @slot('footer')
-                            <div class="card-footer text-center pt-0 px-sm-4 px-1">
-                                <p class="mb-4 mx-auto">
-                                    Already have an account?
-                                    <a href="/signin" class="text-primary text-gradient font-weight-bold">Sign
-                                        in</a>
-                                </p>
-                            </div>
+                            <x-auth.link href="/signin" link-text="Sign In">
+                                Already have an account?
+                            </x-auth.link>
                         @endslot
                     </x-auth.form>
 
