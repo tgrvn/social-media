@@ -25,6 +25,11 @@
                             </button>
                         </div>
 
+                        @slot('footer')
+                            <x-auth.link href="/signup" link-text="Sign up">
+                                Back to
+                            </x-auth.link>
+                        @endslot
                     </x-auth.form>
 
                     <x-auth.background image-path="assets/img/illustrations/lock.png" heading="Soft UI Design">

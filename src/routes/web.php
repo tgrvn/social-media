@@ -33,4 +33,8 @@ Route::get('/password-reset', function () {
     return view('auth.password-reset');
 });
 
+Route::get('/chats', function () {
+    return view('chats.index');
+});
+
 require __DIR__.'/auth.php';

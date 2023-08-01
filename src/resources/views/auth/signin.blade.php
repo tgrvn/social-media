@@ -34,7 +34,7 @@
                                 Don't have an account?
                             </x-auth.link>
 
-                            <x-auth.link href="/send-reset-code" link-text="Reset Password"/>
+                            <x-auth.link href="/send-reset-code" link-text="Forgot password"/>
                         @endslot
                     </x-auth.form>
 

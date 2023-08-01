@@ -25,6 +25,12 @@
                                 Change password
                             </button>
                         </div>
+
+                        @slot('footer')
+                            <x-auth.link href="/" link-text="main">
+                                Back to
+                            </x-auth.link>
+                        @endslot
                     </x-auth.form>
 
                     <x-auth.background image-path="assets/img/illustrations/dark-lock-ill.png"
